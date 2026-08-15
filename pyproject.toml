@@ -34,4 +34,24 @@ dev = [
     "pip-audit>=2.7.0",
     "bandit>=1.8.0",
     "semgrep>=1.90.0",
+    "pre-commit>=4.6.2",
+]
+
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "S"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "unit: unit tests",
+    "integration: integration tests requiring sandbox or corpus",
 ]
