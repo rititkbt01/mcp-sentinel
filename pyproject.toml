@@ -7,7 +7,15 @@ authors = [
     { name = "Ritik Budhathoki", email = "rititkbt01@gmail.com" }
 ]
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "mcp>=1.0.0",
+    "fastmcp>=0.4.0",
+    "pydantic>=2.9.0",
+    "typer>=0.13.0",
+    "rich>=13.9.0",
+    "jinja2>=3.1.0",
+    "libcst>=1.5.0",
+]
 
 [project.scripts]
 mcp-sentinel = "mcp_sentinel:main"
@@ -15,3 +23,15 @@ mcp-sentinel = "mcp_sentinel:main"
 [build-system]
 requires = ["uv_build>=0.12.5,<0.13.0"]
 build-backend = "uv_build"
+
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.0",
+    "pytest-cov>=6.0.0",
+    "mypy>=1.13.0",
+    "ruff>=0.7.0",
+    "pip-audit>=2.7.0",
+    "bandit>=1.8.0",
+    "semgrep>=1.90.0",
+]
